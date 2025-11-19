@@ -1,0 +1,33 @@
+// Mixin to define the @keyframes rule dynamically
+@mixin useCircleDistanceAnimation($distance) {
+  $animation-name: circleDistanceName($distance);
+
+  @keyframes #{$animation-name} {
+    0% {
+      /* transform: rotate(0deg); */
+      transform: rotate(0deg) translate($distance);
+    }
+    100% {
+      transform: rotate(360deg) translate($distance);
+    }
+  }
+}
+@mixin iconNonSpinAnimation($time) {
+  animation: rotateIcon $time linear infinite;
+}
+@keyframes rotateIcon {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes background {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

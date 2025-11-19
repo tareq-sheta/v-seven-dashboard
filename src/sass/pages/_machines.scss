@@ -1,0 +1,63 @@
+// Variables for easy maintenance
+
+// Layout Container
+.all-width {
+  width: 100%;
+}
+.machine-container {
+  display: flex;
+  gap: 18px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 5px;
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #34495e;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #7f8c8d;
+    border-radius: 4px;
+
+    &:hover {
+      background: #95a5a6;
+    }
+  }
+  width: 80vw;
+  .machine-card {
+    flex-shrink: 0;
+
+    width: 500px;
+  }
+}
+.machine-charts_production-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+// Media Queries for Responsiveness (adjust for smaller screens)
+// @media (max-width: 1200px) {
+//   .machine-status-cards {
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+//   .main-content-row {
+//     flex-direction: column;
+//   }
+//   .machine-activity,
+//   .machine-production {
+//     flex: auto;
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .machine-status-cards {
+//     grid-template-columns: 1fr;
+//   }
+//   .timeline-label {
+//     width: 90px;
+//   }
+// }

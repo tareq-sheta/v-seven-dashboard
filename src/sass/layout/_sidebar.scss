@@ -1,0 +1,369 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  grid-row: 1 / -1;
+  background-color: $blueColor;
+  gap: 3.2rem;
+
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  .logo-header {
+    padding: 0;
+    margin-inline: auto;
+    margin-bottom: 121px;
+    font-size: 26px;
+  }
+
+  .scroll-list {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 8px; // Scrollbar width
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #34495e; // Track color
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #7f8c8d; // Thumb color
+      border-radius: 4px;
+
+      &:hover {
+        background: #95a5a6; // Thumb color on hover
+      }
+    }
+  }
+
+  a:not(.logo-header) {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin: 18px 0;
+    margin-right: 45px;
+    padding-left: 85px;
+    z-index: 2;
+    color: $blueInActiveColor;
+    transition: color 0.3s ease, height 2s ease;
+
+    &.active {
+      color: white;
+    }
+
+    &:hover {
+      color: white;
+    }
+
+    i {
+      position: absolute;
+      left: 50px;
+      font-size: 24px;
+      margin-right: 5px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 45px;
+      width: 240px;
+      left: -240px;
+      background-color: $blueDarkColor;
+      z-index: -1;
+      border-radius: 0 50px 50px 0;
+      transition: left 0.3s ease;
+    }
+
+    &.active::before {
+      left: 0;
+    }
+  }
+
+  .droplist {
+    position: relative;
+
+    .branchlist {
+      max-height: 0;
+      overflow-y: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .main-tab.active ~ .branchlist {
+      max-height: 500px;
+      transition: max-height 0.3s ease;
+    }
+
+    .branch-tab {
+      padding-left: 60px;
+      margin-top: 11px;
+      margin-bottom: 11px;
+      transition: padding-left 0.3s ease;
+      &:first-child {
+        margin-top: 4px;
+      }
+      // &:last-child {
+      //   margin-bottom: 0px;
+      // }
+      &::before {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+    }
+
+    .icon-dash {
+      position: relative;
+      bottom: -3px;
+      margin-right: 21px;
+      background-color: $blueInActiveColor;
+      height: 4px;
+      width: 4px;
+      transition: margin-right 0.3s ease, width 0.3s ease;
+      border-radius: 4px;
+    }
+
+    // .active .icon-dash {
+    //   background-color: $whiteColor;
+    //   width: 33.5px;
+    //   margin-right: 10px;
+    // }
+    .active .icon-dash {
+      background-color: $whiteColor;
+      width: 33.5px;
+      margin-right: 10px;
+    }
+  }
+
+  &_first,
+  &_last {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+  }
+
+  &_first {
+    margin-top: 50px;
+  }
+
+  &_last {
+    .sidebar_logo_bottom {
+      display: block;
+      width: 100px;
+      margin-top: 40px;
+      margin-inline: auto;
+      margin-bottom: 30px;
+      opacity: 0.25;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .sidebar {
+    width: 10rem; /* shrinks the sidebar */
+    /* font-size remains 1rem */
+  }
+
+  .header {
+    width: calc(100% - 10rem); /* adjusts header width accordingly */
+    /* font-size remains 1.25rem */
+  }
+}
+// .sidebar {
+//   display: flex;
+//   background-color: $blueColor;
+//   align-items: center;
+//   grid-row: 1 / -1;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   gap: 3.2rem;
+//   a {
+//     color: white;
+//     text-decoration: none;
+//     padding: 10px;
+//   }
+//   & .logo-header {
+//     padding: 0px;
+//     margin-inline: auto;
+//     margin-bottom: 121px;
+//     font-size: 26px;
+//   }
+//   .scroll-list {
+//     overflow-y: auto;
+//   }
+//   .scroll-list::-webkit-scrollbar {
+//     width: 8px; /* Width of the scrollbar */
+//   }
+
+//   .scroll-list::-webkit-scrollbar-track {
+//     background: #34495e; /* Track color */
+//     border-radius: 4px;
+//   }
+
+//   .scroll-list::-webkit-scrollbar-thumb {
+//     // background: #4da4aa; /* Thumb color */
+//     background: #7f8c8d; /* Thumb color */
+//     border-radius: 4px;
+//   }
+
+//   .scroll-list::-webkit-scrollbar-thumb:hover {
+//     background: #95a5a6; /* Thumb color on hover */
+//   }
+//   // & a:has(.icon-dash) {
+//   //   // background-color: red;
+//   //   // transition: padding-left 10s ease;
+//   //   // droplist
+//   //   &.active .icon-dash {
+//   //     width: 33px;
+//   //   }
+//   //   &.active::before {
+//   //     opacity: 0;
+//   //   }
+//   //   &.active {
+//   //     // padding-left: 70px;
+//   //     padding-left: 85px;
+//   //   }
+//   //   &:not(.active)::before {
+//   //     opacity: 0;
+//   //   }
+//   // }
+
+//   & a:not(.logo-header) {
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     font-size: 16px;
+//     margin: 18px 0;
+//     margin-right: 45px;
+//     padding-left: 85px;
+//     z-index: 2;
+//     color: $blueInActiveColor;
+//     transition: color 0.3s ease height 0.3s ease;
+//     &.active {
+//       color: white;
+//     }
+
+//     &:hover {
+//       // color: $whiteColor;
+//       color: white;
+//     }
+//     i {
+//       position: absolute;
+//       left: 50px;
+//       font-size: 24px;
+//       margin-right: 5px;
+//     }
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       height: 45px;
+//       width: 240px;
+//       left: -240px;
+//       // left: 0px;
+//       background-color: $blueDarkColor;
+//       // opacity: 0.25;
+//       z-index: -1;
+//       // border: 1px solid red;
+//       border-radius: 0 50px 50px 0;
+//       transition: left 0.3s ease;
+//     }
+//     &.active::before {
+//       left: 0;
+//     }
+//     // &:hover::before {
+//     //   left: 0;
+//     //   // color: aqua;
+//     // }
+//   }
+//   // .show-sublist {
+//   //   height: 0px;
+
+//   //   overflow: hidden;
+//   // }
+//   .droplist {
+//     position: relative;
+
+//     .branchlist {
+//       max-height: 0; /* Start collapsed */
+//       overflow-y: hidden; /* Hide overflow */
+//       transition: max-height 0.3s ease; /* Smooth transition */
+//     }
+
+//     .main-tab.active ~ .branchlist {
+//       max-height: 500px; /* Adjust this value to be larger than the expected content height */
+//       transition: max-height 0.3s ease; /* Smooth transition */
+//     }
+
+//     .branch-tab {
+//       padding-left: 60px;
+//       transition: padding-left 0.3s ease; /* Smooth transition for padding */
+//     }
+
+//     .branch-tab::before {
+//       opacity: 0;
+//       transition: opacity 0.3s ease; /* Smooth transition for opacity */
+//     }
+
+//     .icon-dash {
+//       position: relative;
+//       // left: -21px;
+//       bottom: -3px;
+//       margin-right: 21px;
+//       background-color: $blueInActiveColor;
+//       height: 4px;
+//       width: 4px;
+//       transition: margin-right 0.3s ease, width 0.3s ease;
+//       border-radius: 4px;
+//     }
+
+//     .active .icon-dash {
+//       background-color: $whiteColor;
+//       width: 33.5px;
+//       margin-right: 10px;
+//       // left: -11px; //
+//     }
+//   }
+
+//   &_first,
+//   &_last {
+//     display: flex;
+//     flex-direction: column;
+//     text-align: left;
+//     width: 100%;
+//   }
+//   &_first {
+//     margin-top: 50px;
+//     // & .logo-header {
+//     // }
+//   }
+//   &_last {
+//     & .sidebar_logo_bottom {
+//       display: block;
+//       width: 100px;
+//       margin-top: 40px;
+//       margin-inline: auto;
+//       margin-bottom: 30px;
+//       // padding-inline: 50px;
+//       // padding: 0px 50px 50px 50px;
+//       opacity: 0.25;
+//       img {
+//         height: 100%; // Make the image height match the container
+//         width: 100%; // Make the image width match the container
+//         object-fit: cover; // Ensures the image covers the container without distortion
+//       }
+//     }
+//   }
+
+//   /* This works because react-router places the active class on the active NavLink */
+// }

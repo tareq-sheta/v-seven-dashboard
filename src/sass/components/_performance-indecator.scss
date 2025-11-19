@@ -1,0 +1,135 @@
+.prfrmns_indctr_cntr {
+  width: fit-content;
+  box-shadow: 0px 8px 12px #0000001a;
+  border-radius: 10px;
+}
+
+.kpi-progressbar-cntr {
+  position: relative;
+  gap: 17px;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 125px;
+    background-color: #f8f8f8;
+    position: absolute;
+    right: -16px;
+    bottom: -7px;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.kpi-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.kpi-progressbar-line {
+  p {
+    font-size: 10px;
+    margin: 0;
+  }
+}
+
+.ant-progress-outer {
+  span {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+.card_icon {
+  margin-right: 10px;
+}
+
+.cntr-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.28px;
+  color: #000000;
+  padding: 15px 20px;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+
+  i {
+    margin-right: 10px;
+  }
+
+  span {
+    padding-top: 1px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: calc(100% - 10px);
+    background-color: #f8f8f8;
+    position: absolute;
+    left: 5px;
+    bottom: 0;
+  }
+}
+
+.kpi-content-cntr-body {
+  padding: 32px 20px 35px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 0 0 10px 10px;
+  gap: 10px;
+}
+
+.cntr-body-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 11px;
+  border-radius: 4px;
+  text-transform: capitalize;
+  letter-spacing: 0.28px;
+
+  * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:not(:has(i)) {
+    line-height: normal;
+
+    span {
+      font-size: 21px;
+      padding-top: 1px;
+      font-weight: 300;
+      color: #8d9192;
+      letter-spacing: 0.42px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+i {
+  font-size: 16px;
+}

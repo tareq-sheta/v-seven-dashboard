@@ -1,0 +1,7 @@
+// Function to generate a unique animation name
+@function circleDistanceName($distance) {
+  @return circle-#{$distance};
+}
+@function halfDistance($distance) {
+  @return $distance/2;
+}

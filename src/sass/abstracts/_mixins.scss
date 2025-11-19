@@ -1,0 +1,43 @@
+@import "../base/animation";
+@import "../abstracts/functions";
+
+@mixin iconSpeedSizeDist($time, $size, $dist) {
+  @include useCircleDistanceAnimation($dist/2);
+  animation: circleDistanceName($dist/2) $time infinite linear;
+  height: $size;
+  width: $size;
+  & > * {
+    @include iconNonSpinAnimation($time);
+
+    // display: flex;
+    // height: 100%;
+    // width: 100%;
+  }
+}
+@mixin pathSizeOpacity($size, $opa: 1) {
+  height: $size;
+  width: $size;
+  opacity: $opa;
+}
+@mixin logoSetting($width: 100px, $height: 100px) {
+  .logo-cnt {
+    text-align: center;
+    height: $height;
+    width: $width;
+    font-size: 26px;
+    overflow: hidden; // Ensures the image doesn't overflow the container
+    display: flex; // Use flexbox for better alignment
+    align-items: center; // Vertically center the image
+    justify-content: center; // Horizontally center the image
+    img {
+      height: 100%; // Make the image height match the container
+      width: 100%; // Make the image width match the container
+      object-fit: cover; // Ensures the image covers the container without distortion
+    }
+  }
+}
+@mixin centerContent() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
