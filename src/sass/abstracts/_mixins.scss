@@ -1,19 +1,21 @@
-@import "../base/animation";
-@import "../abstracts/functions";
+@use "../base/animation" as *;
+@use "./functions" as *;
 
-@mixin iconSpeedSizeDist($time, $size, $dist) {
-  @include useCircleDistanceAnimation($dist/2);
-  animation: circleDistanceName($dist/2) $time infinite linear;
+@mixin iconSpeedSizeDist($time, $size, $dist, $startAngle: 0deg) {
+  // Strip units if needed or divide angle by 360deg to get the cycle fraction
+  $delay: -($startAngle / 360deg) * $time;
+
+  @include useCircleDistanceAnimation($dist * 0.5);
+  animation: circleDistanceName($dist * 0.5) $time infinite linear;
+  animation-delay: $delay;
   height: $size;
   width: $size;
-  & > * {
-    @include iconNonSpinAnimation($time);
 
-    // display: flex;
-    // height: 100%;
-    // width: 100%;
+  & > * {
+    @include iconNonSpinAnimation($time, $delay);
   }
 }
+
 @mixin pathSizeOpacity($size, $opa: 1) {
   height: $size;
   width: $size;
@@ -40,4 +42,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin iconsStartAngle($angle) {
+  transform: rotate(-$angle);
 }

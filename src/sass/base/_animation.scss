@@ -1,4 +1,6 @@
 // Mixin to define the @keyframes rule dynamically
+@use "../abstracts/functions" as *;
+
 @mixin useCircleDistanceAnimation($distance) {
   $animation-name: circleDistanceName($distance);
 
@@ -12,9 +14,14 @@
     }
   }
 }
-@mixin iconNonSpinAnimation($time) {
+
+@mixin iconNonSpinAnimation($time, $delay: 0s) {
   animation: rotateIcon $time linear infinite;
+  animation-delay: $delay;
 }
+//--------
+//--------
+//--------
 @keyframes rotateIcon {
   0% {
     transform: rotate(360deg);
