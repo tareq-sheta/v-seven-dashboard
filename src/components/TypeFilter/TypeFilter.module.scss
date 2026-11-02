@@ -1,0 +1,155 @@
+.pickerWrapper {
+  position: relative;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    sans-serif;
+  width: fit-content;
+}
+
+.tabsContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  padding: 4px;
+  gap: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-right: 35px;
+}
+
+.indicator {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  background-color: #143b74;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tabItem {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #1e293b;
+  }
+
+  &.activeTab {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  &_One {
+    width: 60px;
+  }
+  &_Two {
+    width: 106px;
+  }
+}
+.customTriggerPill {
+  position: relative;
+  z-index: 2;
+  color: #64748b;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+
+  width: 160px; // Fixed width preserves layout stability without collapsing
+  height: 38px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: color 0.3s ease;
+
+  &.activeTab {
+    color: #ffffff;
+  }
+
+  .contentWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .dateRangeContent,
+  .iconContainer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .dateRangeContent {
+    justify-content: space-between;
+    width: 100%;
+    font-size: 13px;
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+
+    .arrowSeparator {
+      color: #94a3b8;
+    }
+  }
+
+  .iconContainer {
+    justify-content: center;
+    opacity: 1;
+    transform: translateY(0);
+
+    .calendarIcon {
+      width: 18px;
+      height: 18px;
+      color: currentColor;
+    }
+  }
+
+  .contentWrapper.showText {
+    .dateRangeContent {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .iconContainer {
+      opacity: 0;
+      transform: translateY(-6px);
+      pointer-events: none;
+    }
+  }
+
+  .contentWrapper.showIcon {
+    .dateRangeContent {
+      opacity: 0;
+      transform: translateY(6px);
+      pointer-events: none;
+    }
+    .iconContainer {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  }
+}

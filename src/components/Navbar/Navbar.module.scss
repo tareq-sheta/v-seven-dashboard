@@ -1,0 +1,20 @@
+.navbar {
+  padding: 0.5rem;
+  padding-right: 0.5rem;
+  padding-left: 5.4rem;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  &_left,
+  &_right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  &_right {
+    position: relative;
+  }
+}

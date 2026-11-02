@@ -1,0 +1,38 @@
+.circularWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.svgContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circularText {
+  position: absolute;
+  font-size: 14px;
+  color: #333;
+}
+
+.circularLabel {
+  margin: 8px 0 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #000;
+}
+.circularItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 7px;
+
+  p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
