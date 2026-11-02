@@ -1,0 +1,50 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: sans-serif;
+}
+.dashboardBody {
+  width: 100%;
+  display: grid;
+
+  row-gap: 65px;
+  grid-template-columns: repeat(4, auto);
+  height: 730px;
+  &.scrollList {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 8px; // Scrollbar width
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #34495e; // Track color
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #7f8c8d; // Thumb color
+      border-radius: 4px;
+
+      &:hover {
+        background: #95a5a6; // Thumb color on hover
+      }
+    }
+  }
+}
+
+/* When viewport is less than 1920px */
+@media (max-width: 1919px) {
+  .dashboardBody {
+    column-gap: 40px;
+  }
+}
+@media (max-width: 1899px) {
+  .dashboardBody {
+    grid-template-columns: repeat(3, auto);
+    // grid-template-columns: repeat(2, auto);
+  }
+}

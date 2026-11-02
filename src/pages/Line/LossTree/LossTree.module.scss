@@ -1,0 +1,288 @@
+.lossTreeCntr {
+  display: grid;
+  height: 280px;
+
+  grid-template-columns: repeat(8, 30px);
+
+  justify-content: space-between;
+
+  padding: 35px;
+
+  padding-bottom: 40px;
+
+  grid-row-gap: 5px;
+}
+
+.mainOn,
+.mainOff,
+.subOn1,
+.subOn2,
+.subOff1,
+.subOff2,
+.subOff3,
+.subOff4,
+.subOff5 {
+  position: relative;
+  span.name {
+    font-size: 12px;
+    position: absolute;
+    transform: rotate(-90deg);
+  }
+  span.persent {
+    font-size: 12px;
+    position: absolute;
+    font-weight: bold;
+  }
+  span.title {
+    font-size: 12px;
+    position: absolute;
+    font-weight: bold;
+  }
+  span.amount {
+    position: absolute;
+  }
+}
+.mainOff {
+  background-color: red;
+  border-radius: 5px;
+  grid-area: 1 / 1 / 2 / 2;
+  span.persent {
+    left: 35px;
+  }
+  span.name {
+    left: -20px;
+    bottom: 30%;
+  }
+}
+.mainOn {
+  background-color: #2ec4b6;
+  border-radius: 5px;
+  grid-area: 2 / 1 / 3 / 2;
+  span.persent {
+    left: 35px;
+  }
+  span.name {
+    left: -20px;
+    bottom: 10px;
+  }
+}
+
+.subOn1 {
+  grid-area: 2 / 2 / 3 / 3;
+  background-color: #2ec4b51a;
+  // opacity: 0.1;
+  border-radius: 5px;
+  span.persent {
+    left: 35px;
+  }
+  span.title {
+    bottom: -45px;
+  }
+  span.amount {
+    background-color: #2ec4b5;
+    width: 100%;
+    // height: 100%;
+    border-radius: 5px;
+    // position: absolute;
+    bottom: 0;
+  }
+}
+
+.subOn2 {
+  grid-area: 2 / 3 / 3 / 4;
+  background-color: #2ec4b51a;
+  border-radius: 5px;
+  span.persent {
+    left: 35px;
+  }
+  span.title {
+    bottom: -45px;
+  }
+  span.amount {
+    background-color: #2ec4b5;
+    width: 100%;
+    // height: 100px;
+    border-radius: 5px;
+    // position: absolute;
+    top: 0;
+  }
+}
+
+.subOff1 {
+  grid-area: 1 / 4 / 1 / 5;
+  background-color: rgba(255, 0, 0, 0.1);
+  border-radius: 5px;
+  span.persent {
+    left: 35px;
+    bottom: 0px;
+  }
+  span.amount {
+    background-color: red;
+    width: 100%;
+    // height: 100%;
+    border-radius: 5px;
+    // position: absolute;
+    top: 0;
+  }
+  span.title {
+    top: -45px;
+  }
+}
+.subOff2 {
+  grid-area: 1 / 5 / 1 / 6;
+  background-color: rgba(255, 0, 0, 0.1);
+  border-radius: 5px;
+  span.persent {
+    left: 35px;
+    bottom: 0px;
+  }
+  span.amount {
+    background-color: red;
+    width: 100%;
+    // height: 100%;
+    border-radius: 5px;
+    // position: absolute;
+    top: 0;
+  }
+  span.title {
+    top: -45px;
+  }
+}
+.subOff3 {
+  grid-area: 1 / 6 / 1 / 7;
+  background-color: rgba(255, 0, 0, 0.1);
+  border-radius: 5px;
+  span.persent {
+    left: 35px;
+    bottom: 0px;
+  }
+  span.amount {
+    background-color: red;
+    width: 100%;
+    // height: 100%;
+    border-radius: 5px;
+    // position: absolute;
+    top: 0;
+  }
+  span.title {
+    top: -45px;
+  }
+}
+.subOff4 {
+  grid-area: 1 / 7 / 1 / 8;
+  background-color: rgba(255, 0, 0, 0.1);
+  border-radius: 5px;
+  span.persent {
+    left: 35px;
+    bottom: 0px;
+  }
+  span.amount {
+    background-color: red;
+    width: 100%;
+    // height: 100%;
+    border-radius: 5px;
+    // position: absolute;
+    top: 0;
+  }
+  span.title {
+    top: -45px;
+  }
+}
+.subOff5 {
+  grid-area: 1 / 8 / 1 / 9;
+  background-color: rgba(255, 0, 0, 0.1);
+  border-radius: 5px;
+  span.persent {
+    left: 35px;
+    bottom: 0px;
+  }
+  span.amount {
+    background-color: red;
+    width: 100%;
+    // height: 100%;
+    border-radius: 5px;
+    // position: absolute;
+    bottom: 0;
+  }
+  span.title {
+    top: -45px;
+  }
+}
+//------------
+//------------
+//------------
+.customActivityContainer {
+  background-color: #ffffff;
+  border-radius: 10px;
+  // box-shadow: 0px 8px 12px #0000001a;
+  box-shadow: 0px 8px 12px #0000001a;
+  display: flex;
+  height: 437px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.customTabsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.activityTitle {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #000000;
+  letter-spacing: 0.28px;
+
+  i {
+    margin-right: 10px;
+  }
+}
+
+.tabsNav {
+  display: flex;
+  gap: 32px; // Controls the spacing between tabs
+  margin-right: 24px;
+}
+
+.tabTrigger {
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 16px 0;
+  font-size: 14px;
+  color: #8d9192;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  outline: none;
+
+  &:hover {
+    color: #4096ff;
+  }
+
+  &.active {
+    color: #4096ff;
+
+    // The blue indicator line for the active tab
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px; // Overlaps the container's bottom border
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #4096ff;
+      border-radius: 2px 2px 0 0;
+    }
+  }
+}
+
+.customTabsContent {
+  padding: 24px; // Adjust padding based on what your child components need
+  background-color: #ffffff;
+  height: 100%;
+  border-radius: 0 0 10px 10px;
+}

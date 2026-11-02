@@ -1,0 +1,160 @@
+.performanceIndicatorCntr {
+  box-shadow: 0px 8px 12px #0000001a;
+  border-radius: 10px;
+  background-color: #ffffff;
+  height: 100%;
+}
+
+.cntrHeader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.28px;
+  color: #000000;
+  padding: 15px 20px;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+
+  .cardIcon {
+    margin-right: 10px;
+    font-size: 16px;
+  }
+  svg {
+    height: 22px;
+    width: 22px;
+  }
+  span {
+    padding-top: 1px;
+    font-weight: bold;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: calc(100% - 10px);
+    background-color: #f8f8f8;
+    position: absolute;
+    left: 5px;
+    bottom: 0;
+  }
+}
+
+.kpiContentCntrBody {
+  padding: 15px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 0 0 10px 10px;
+  gap: 10px;
+}
+
+.kpiContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Container for the 3 Circular Progress items */
+.kpiProgressbarCntr {
+  display: flex; // Replacing Antd <Flex>
+  position: relative;
+  gap: 17px;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 125px;
+    background-color: #f8f8f8;
+    position: absolute;
+    right: -16px;
+    bottom: -7px;
+  }
+
+  .circularItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+
+    p {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+}
+
+/* Container for Linear Progress Bars */
+.linearGroup {
+  display: flex;
+  flex-direction: column;
+  // gap: 8px;
+  width: 280px;
+}
+
+.kpiProgressbarLine {
+  p {
+    font-size: 10px;
+    margin: 4px 0 0 0;
+    color: #333;
+  }
+}
+
+/* Custom Circular Progress Styles */
+.circularWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.svgContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circularText {
+  position: absolute;
+  font-size: 18px; // Scaled up slightly for size 73
+  font-weight: 500;
+  color: #333;
+}
+
+.cntrBodyItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 11px;
+  border-radius: 4px;
+  text-transform: capitalize;
+  letter-spacing: 0.28px;
+
+  * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:not(:has(i)) {
+    line-height: normal;
+
+    span {
+      font-size: 21px;
+      padding-top: 1px;
+      font-weight: 300;
+      color: #8d9192;
+      letter-spacing: 0.42px;
+      text-transform: uppercase;
+    }
+  }
+}

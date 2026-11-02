@@ -1,0 +1,92 @@
+.totalProductionCntr {
+  width: 282px;
+  box-shadow: 0px 8px 12px #0000001a;
+  border-radius: 10px;
+  height: 100%;
+  background-color: white;
+  i {
+    font-size: 16px;
+  }
+}
+
+.cardIcon {
+  margin-right: 10px;
+}
+
+.totalProductionCntr .cntrHeader {
+  // background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.28px;
+  color: #000000;
+
+  padding: 13px 20px;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+
+  i {
+    margin-right: 10px;
+  }
+
+  span {
+    padding-top: 1px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: calc(100% - 10px);
+    background-color: #f8f8f8;
+    position: absolute;
+    left: 5px;
+    bottom: 0;
+  }
+}
+
+.totalProductionCntr .cntrBody {
+  padding: 10px 30px;
+  padding-top: 15px;
+
+  display: grid;
+  background-color: #ffffff;
+  border-radius: 0 0 10px 10px;
+  grid-template-columns: 125px 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  row-gap: 15px;
+
+  .cntrBodyItem {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-size: 11px;
+    border-radius: 4px;
+    text-transform: capitalize;
+    font-weight: bold;
+    letter-spacing: 0.28px;
+
+    &:not(:has(svg)) {
+      line-height: normal;
+
+      span {
+        font-size: 21px;
+        padding-top: 1px;
+        font-weight: 300;
+        color: #8d9192;
+        letter-spacing: 0.42px;
+        text-transform: uppercase;
+      }
+    }
+
+    * {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
