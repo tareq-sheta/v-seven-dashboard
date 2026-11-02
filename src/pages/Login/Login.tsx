@@ -94,7 +94,7 @@ function Login() {
                 username : <span>emily.johnson@x.dummyjson.com</span>
               </p>
               <p>
-                password : <span>emilypass</span>
+                password : <span>emilyspass</span>
               </p>
             </div>
             {/* Login Form */}
