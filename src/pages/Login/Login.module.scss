@@ -1,0 +1,320 @@
+.container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.leftSection {
+  background-color: $blueColor;
+  color: $whiteColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 20px;
+  flex: 3;
+  font-size: 2em;
+}
+.rightSection {
+  background-color: $whiteColor;
+  color: #000;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: end;
+  font-size: 2em;
+}
+.logoMiddle {
+  position: absolute;
+  z-index: 1;
+  img {
+    height: 500px;
+    width: 500px;
+    opacity: 0.1;
+    filter: hue-rotate(650deg) saturate(1.5) brightness(1.2);
+  }
+}
+.pathsContainer {
+  position: relative;
+  height: 750px;
+  width: 750px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+.path {
+  background-color: transparent;
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid white;
+
+  &_one {
+    @include pathSizeOpacity($pathOneSize, 0.25);
+  }
+  &_two {
+    @include pathSizeOpacity($pathTwoSize, 0.5);
+  }
+  &_three {
+    @include pathSizeOpacity($pathThreeSize, 0.75);
+  }
+  &_four {
+    @include pathSizeOpacity($pathFourSize);
+    // height: 300px;
+    // width: 300px;
+  }
+}
+//---------
+//---------
+//---------
+// .icon {
+//   //   background-color: $whiteColor;
+//   color: $blueColor;
+//   border-radius: 50%;
+//   position: absolute;
+//   @include centerContent();
+//   &_1 {
+//     background-color: rgba(255, 255, 255, 0.781);
+//     @include iconSpeedSizeDist($iconCycleTimeOne, 50px, $pathOneSize);
+//     // opacity: 0.5;
+//     svg {
+//       width: 25px;
+//       height: 25px;
+//     }
+//     &_1 {
+//       background-color: rgba(255, 255, 255, 0.322);
+//       @include iconSpeedSizeDist(90s, 70px, $pathOneSize);
+//       // opacity: 0.75;
+//       svg {
+//         width: 35px;
+//         height: 35px;
+//       }
+//     }
+//   }
+//   &_2 {
+//     background-color: rgba(255, 255, 255, 0.445);
+//     @include iconSpeedSizeDist($iconCycleTimeTwo, 58px, $pathTwoSize);
+//     // opacity: 0.25;
+//     svg {
+//       width: 30px;
+//       height: 30px;
+//     }
+//     &_1 {
+//       background-color: rgba(255, 255, 255, 0.322);
+//       @include iconSpeedSizeDist(130s, 50px, $pathTwoSize);
+//       // opacity: 0.75;
+//       svg {
+//         width: 25px;
+//         height: 25px;
+//       }
+//     }
+//   }
+//   &_3 {
+//     background-color: rgba(255, 255, 255, 0.596);
+//     @include iconSpeedSizeDist($iconCycleTimeThree, 90px, $pathThreeSize);
+//     // opacity: 0.75;
+//     svg {
+//       width: 45px;
+//       height: 45px;
+//     }
+//     &_1 {
+//       background-color: rgba(255, 255, 255, 0.322);
+//       @include iconSpeedSizeDist(40s, 45px, $pathThreeSize);
+//       // opacity: 0.75;
+//       svg {
+//         width: 25px;
+//         height: 25px;
+//       }
+//     }
+//   }
+//   &_4 {
+//     background-color: rgba(255, 255, 255, 0.5);
+//     @include iconSpeedSizeDist($iconCycleTimeFour, 110px, $pathFourSize);
+//     svg {
+//       width: 50px;
+//       height: 50px;
+//     }
+//     // opacity: 0.1;
+//   }
+// }
+.icon {
+  color: $blueColor;
+  border-radius: 50%;
+  position: absolute;
+  @include centerContent();
+
+  &_1 {
+    background-color: rgba(255, 255, 255, 0.781);
+    @include iconSpeedSizeDist($iconCycleTimeOne, 50px, $pathOneSize, 0deg);
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+    &_1 {
+      background-color: rgba(255, 255, 255, 0.322);
+      @include iconSpeedSizeDist(90s, 70px, $pathOneSize, 180deg);
+      svg {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+
+  &_2 {
+    background-color: rgba(255, 255, 255, 0.445);
+    @include iconSpeedSizeDist($iconCycleTimeTwo, 58px, $pathTwoSize, 45deg);
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+    &_1 {
+      background-color: rgba(255, 255, 255, 0.322);
+      @include iconSpeedSizeDist(130s, 50px, $pathTwoSize, 225deg);
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  &_3 {
+    background-color: rgba(255, 255, 255, 0.596);
+    @include iconSpeedSizeDist(
+      $iconCycleTimeThree,
+      90px,
+      $pathThreeSize,
+      90deg
+    );
+    svg {
+      width: 45px;
+      height: 45px;
+    }
+    &_1 {
+      background-color: rgba(255, 255, 255, 0.322);
+      @include iconSpeedSizeDist(40s, 45px, $pathThreeSize, 270deg);
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  &_4 {
+    background-color: rgba(255, 255, 255, 0.5);
+    @include iconSpeedSizeDist(
+      $iconCycleTimeFour,
+      110px,
+      $pathFourSize,
+      135deg
+    );
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+//---------
+//---------
+//---------
+.loginContainer {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  height: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+
+/* Logo Header and Footer */
+.logoHeader,
+.logoFooter {
+  margin-bottom: 20px;
+}
+.logoHeader {
+  @include centerContent();
+  gap: 20px;
+  text-transform: uppercase;
+  text-align: end;
+  & .logo {
+    height: 25px;
+    width: auto;
+    filter: hue-rotate(200deg) saturate(80%) brightness(70%) contrast(120%);
+  }
+  span {
+    color: $blueColor;
+    position: relative;
+    // top: 4px;
+  }
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+/* Form Styles */
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formGroup {
+  width: 100%;
+}
+
+.formInput {
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  border: 1px solid $blueColor;
+  border-radius: 20px; /* Pill shape */
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.formInput:focus {
+  border-color: $blueColor;
+}
+
+/* Login Button */
+.loginButton {
+  width: 100%;
+  height: 40px;
+
+  background-color: $blueColor;
+  color: #fff;
+  border: 1px solid white;
+  // outline: none;
+  text-transform: uppercase;
+
+  border-radius: 20px; /* Pill shape */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #ffffff;
+    color: $blueColor;
+    border: 1px solid $blueColor;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .loginContainer {
+    padding: 15px;
+  }
+
+  .formInput,
+  .loginButton {
+    height: 35px;
+    font-size: 14px;
+  }
+}

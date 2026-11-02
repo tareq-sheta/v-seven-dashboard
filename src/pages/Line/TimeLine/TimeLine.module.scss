@@ -1,0 +1,51 @@
+.timelineContainer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  // padding: 12px 0;
+}
+
+.labelContainer {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 11px;
+  font-weight: 800;
+  color: #003f5c; // Your dark corporate text color
+  text-transform: uppercase;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+.barWrapper {
+  flex-grow: 1;
+  height: 24px;
+  display: flex;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #f0f2f5; // Fallback background
+}
+
+.segment {
+  height: 100%;
+  transition: width 0.3s ease;
+
+  // Hover effect to make it interactive if needed later
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+// Semantic State Colors
+.stateRunning {
+  background-color: #2ec4b6; // The teal from your factory charts
+}
+.stateDown {
+  background-color: #e31837; // The new beverage red
+}
+.stateIdle {
+  background-color: #d0d7da; // The grey from your function tabs
+}

@@ -1,0 +1,34 @@
+.oneLineCntr {
+  display: grid;
+
+  grid-template-columns: 280px 1fr 280px 385px;
+  grid-template-rows: 190px repeat(1, 1fr) 130px;
+  width: 100%;
+  height: 100%;
+
+  gap: 23px;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.div2 {
+  // display: flex;
+  grid-area: 1 / 2 / 2 / 3;
+}
+.div3 {
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+.div4 {
+  grid-row: span 3 / span 3;
+}
+
+.div5 {
+  grid-column: span 3 / span 3;
+}
+
+.div6 {
+  grid-column: span 3 / span 3;
+  grid-row-start: 3;
+}
