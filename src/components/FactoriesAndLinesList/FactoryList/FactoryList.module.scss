@@ -1,0 +1,122 @@
+@keyframes slideDownFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+.dropdownWrapper {
+  position: relative;
+  height: 38px;
+}
+
+.triggerButton {
+  position: relative;
+  background-color: $blueColor;
+  color: $whiteColor;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  height: 100%;
+  width: 215px;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  transition:
+    background-color 0.3s ease,
+    opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.92;
+  }
+
+  &.isOpen {
+    .chevronIcon {
+      transform: rotate(180deg);
+    }
+    .buttonIcon {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.contentActive {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+
+  .buttonIcon {
+    flex-shrink: 0;
+    transition: transform 0.4s ease;
+  }
+
+  .buttonText {
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .chevronIcon {
+    flex-shrink: 0;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+  }
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 100%;
+  background-color: $whiteColor;
+  border-radius: 6px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 4px;
+  margin: 0;
+  list-style: none;
+  z-index: 50;
+  animation: slideDownFade 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  &.isClosing {
+    animation-name: slideUpFade;
+  }
+}
+
+.menuItem {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #333333;
+  cursor: pointer;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    background-color: #f1f5f9;
+  }
+
+  &.active {
+    background-color: #e6f4ff;
+    color: $blueColor;
+    font-weight: 600;
+  }
+}
