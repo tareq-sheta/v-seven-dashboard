@@ -89,7 +89,14 @@ function Login() {
               <img src="/factoryIcon.png" alt="Logo" className={style.logo} />
               <span>mes</span>
             </div>
-
+            <div className={style.hint}>
+              <p>
+                username : <span>emily.johnson@x.dummyjson.com</span>
+              </p>
+              <p>
+                password : <span>emilypass</span>
+              </p>
+            </div>
             {/* Login Form */}
             <form className={style.loginForm} onSubmit={handleSubmit}>
               {/* Email Field */}

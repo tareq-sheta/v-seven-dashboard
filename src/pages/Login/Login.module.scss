@@ -1,3 +1,5 @@
+@use "../../sass/abstracts/variables" as *;
+
 .container {
   margin: 0;
   padding: 0;
@@ -43,6 +45,20 @@
 
   justify-content: center;
   align-items: center;
+}
+.hint {
+  display: flex;
+  font-size: small;
+  flex-direction: column;
+  align-items: flex-start;
+  color: $blueColor;
+  gap: 10px;
+  text-transform: capitalize;
+  span {
+    font-weight: bold;
+    color: black;
+    text-transform: lowercase;
+  }
 }
 .path {
   background-color: transparent;
